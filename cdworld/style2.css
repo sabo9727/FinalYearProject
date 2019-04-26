@@ -1,0 +1,42 @@
+.ggwp
+{
+	background: transparent;;
+	padding: 70px;
+	border-radius: 7px;
+	box-shadow: 5px 5px 10px #f00303;
+}
+.btnd
+{
+	border-style: none;
+	width: 148px;
+	height: 40px;
+	border-radius: 4px;
+	text-align: center;
+	box-shadow: 1px 1px 3px #666;
+	background: #f00303;
+	color: #FFF;
+	font-weight: bold;
+}
+.btnd:hover
+{
+	border-style: none;
+	width: 148px;
+	height: 40px;
+	border-radius: 4px;
+	text-align: center;
+	box-shadow: 1px 1px 3px #666;
+	background: #fa9999;
+	color: #FFF;
+	font-weight: bold;
+}
+.textboxd1
+{
+  border-style: none;
+  border:1px solid #f00303;
+  width: 400px;
+  height: 40px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 3px 6px 6px #f00303;
+  font-size: 16px;
+}

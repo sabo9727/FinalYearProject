@@ -1,0 +1,50 @@
+
+
+
+
+.bar
+{
+	background: transparent;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 4px 4px 8px #889;
+}
+
+.btnLink
+{
+	text-decoration: none;
+	width:auto;
+	height:auto;
+	padding: 10px;
+	border-style: none;
+	border:1px solid #0f8bb5;
+	color: #0f8bb5;
+	font-weight: bold;
+	font-size: 25px;
+	border-radius: 5px;
+	
+}
+.btnLink:hover
+{
+	text-decoration: none;
+	width:auto;
+	height:auto;
+	padding: 10px;
+	border-style: none;
+	border:1px solid blue;
+	color: blue;
+	font-weight: bold;
+	font-size: 25px;
+	border-radius: 5px;
+}
+.textboxd2
+{
+  border-style: none;
+  border:1px solid #0e7598;
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 3px 6px 6px #666;
+  font-size: 16px;
+}
