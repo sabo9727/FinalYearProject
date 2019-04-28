@@ -1,25 +1,73 @@
 <?php 
-	error_reporting(0);
-	session_start();
-	require ('include/connect.php');
-	if (isset($_REQUEST['Delete'])) 
+error_reporting(0);
+session_start();
+require ('include/connect.php');
+if (isset($_REQUEST['Delete'])) 
+{
+	$productid=$_REQUEST['product_id'];
+	$deletemovie="DELETE FROM movie WHERE product_product_id='$productid'";
+	$deletemusic="DELETE FROM music WHERE product_product_id='$productid'";
+	$deletegame="DELETE FROM game WHERE product_product_id='$productid'";
+	$retmoive=mysqli_query($con,$deletemovie);
+	if ($retmoive) 
 	{
-		
-		$productid=$_REQUEST['product_id'];
 		$delete="DELETE FROM product WHERE product_id='$productid'";
 		$ret=mysqli_query($con,$delete);
 		if ($ret) 
 		{
 			echo "<script>window.alert('Sucessfully Deleted')</script>";
-			echo "<script>window.location='product_listing.php'</script>";
+			echo "<script>window.location='product_listing.php'</script>";	
 		}
 		else
 		{
-			echo "Error:".$delete ."<br>".mysqli_error($con);
+			echo "Error:".$delete."<br>".mysqli_error($con);
 		}
 	}
- ?>
- <!DOCTYPE html>
+	else
+	{
+		echo "Error:".$deletemovie."<br>".mysqli_error($con);
+	}
+	$retmusic=mysqli_query($con,$deletemusic);
+	if ($retmoive) 
+	{
+		$delete="DELETE FROM product WHERE product_id='$productid'";
+		$ret=mysqli_query($con,$delete);
+		if ($retmusic) 
+		{
+			echo "<script>window.alert('Sucessfully Deleted')</script>";
+			echo "<script>window.location='product_listing.php'</script>";	
+		}
+		else
+		{
+			echo "Error:".$delete."<br>".mysqli_error($con);
+		}
+	}
+	else
+	{
+		echo "Error:".$deletemusic."<br>".mysqli_error($con);
+	}		
+	$retgame=mysqli_query($con,$deletegame);
+	if ($retgame) 
+	{
+		$delete="DELETE FROM product WHERE product_id='$productid'";
+		$ret=mysqli_query($con,$delete);
+		if ($ret) 
+		{
+			echo "<script>window.alert('Sucessfully Deleted')</script>";
+			echo "<script>window.location='product_listing.php'</script>";	
+		}
+		else
+		{
+			echo "Error:".$delete."<br>".mysqli_error($con);
+		}
+	}
+	else
+	{
+		echo "Error:".$deletegame."<br>".mysqli_error($con);
+	}		
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -47,8 +95,8 @@
 		<td>Image2</td>
 		<td>Action</td>
 		</tr>
-		<?php 
-			$query="SELECT * FROM product ORDER BY product_quantity";
+<?php 
+			$query="SELECT * FROM product ORDER BY product_name";
 			$ret=mysqli_query($con,$query);
 			$count=mysqli_num_rows($ret);
 			for ($i=0; $i < $count; $i++) 
@@ -70,7 +118,7 @@
 				<a href='product_listing.php?product_id=$productid&Delete'>Delete</a></td>";
 				echo "</tr>";
 			}
-			 ?>
+?>
 	</table>
 	</form>
 </body>
